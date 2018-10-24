@@ -3,7 +3,7 @@ import matplotlib.pyplot as pp
 from pandas_datareader import data
 import numpy as np
 
-stockInfo = data.DataReader(ticker, 'quandl', '2017-01-01', '2017-04-30')
+stockInfo = data.DataReader(ticker, 'quandl', '2017-01-01', '2017-06-30')
 stockFrame = pd.DataFrame(stockInfo)
 #stockFrame['Date'] = pd.to_datetime(stockFrame['Date'])
 #stockFrame = stockFrame.set_index(['Date'])
