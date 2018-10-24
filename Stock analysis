@@ -16,5 +16,17 @@ o = stockFrame['Open'].values
 v = stockFrame['Volume'].values
 x = stockFrame.index
 
+pp.plot(x, y, label = 'Close')
+pp.plot(x, o, label = 'Open')
+pp.bar(x, v, label = 'volume')
+pp.xlabel('Date')
+pp.ylabel('Volume')
+pp.title('MACK Tracker')
+pp.legend()
+pp.show()
 
+stockFrame = stockFrame.resample('M').mean()
+print(stockFrame)
+
+#close and open stock price's trends will be shown in a graph as well
 
