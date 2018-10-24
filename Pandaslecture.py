@@ -1,10 +1,5 @@
 import pandas as pd
 from pandas_datareader import data 
-#import pandas_datareader as data
-# Any difference????
-#import matplotlib.pyplot as pp
-
-
 
 #ticker=input('Enter a stock symbol:\n>>')
 ticker='MACK'
@@ -35,14 +30,13 @@ stockFrame['Delta']=stockFrame['Close']-stockFrame['Open']
 stockFrame = stockFrame.resample('M').mean()
 print (stockInfo)
 print(stockFrame)
-#print(stockFrame.info)
-#print(stockFrame['Close'].values)
+print(stockFrame.info)
+print(stockFrame['Close'].values)
 
+print (stockFrame.info())
 
-#print (stockFrame.info())
-
-#print (stockFrame[['Open','Close']])
-#print (stockFrame.Open)
+print (stockFrame[['Open','Close']])
+print (stockFrame.Open)
 
 
 
