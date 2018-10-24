@@ -1,0 +1,19 @@
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+
+urlString='https://www.yelp.com/biz/jazz-standard-new-york'
+url=urlopen(urlString)
+soup=BeautifulSoup(url,'html.parser')
+
+
+authorList = soup.find_all(itemprop='author')
+starsList = soup.find_all(itemprop='ratingValue')
+dateList = soup.find_all(itemprop='datePublished')
+descriptionList = soup.find_all(itemprop='description')
+allComments = []
+i=0
+while i < len(authorList):
+    commentTuple = (authorList[i]['content'], starsList[i]['content'], dateList[i]['content'], descriptionList[i].get_text())
+    allComments.append(commentTuple)
+    i += 1
+print(allComments)
