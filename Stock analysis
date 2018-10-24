@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as pp
+from pandas_datareader import data
+import numpy as np
+
+stockInfo = data.DataReader(ticker, 'quandl', '2017-01-01', '2017-04-30')
+stockFrame = pd.DataFrame(stockInfo)
+#stockFrame['Date'] = pd.to_datetime(stockFrame['Date'])
+#stockFrame = stockFrame.set_index(['Date'])
+stockFrame[['Close', 'Open', 'High', 'Low']] = stockFrame[['Close', 'Open', 'High', 'Low']].astype(float)
+stockFrame['Volume'] =stockFrame['Volume'].astype(int)
+stockFrame['Delta'] = stockFrame['Close'] - stockFrame['Open']
+print(stockFrame)
+y = stockFrame['Close'].values
+o = stockFrame['Open'].values
+v = stockFrame['Volume'].values
+x = stockFrame.index
+
+
+
