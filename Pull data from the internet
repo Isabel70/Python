@@ -17,3 +17,5 @@ while i < len(authorList):
     allComments.append(commentTuple)
     i += 1
 print(allComments)
+
+#Print all the information including:author, ratingvalue, date published and description)
