@@ -2,6 +2,7 @@ import pandas as pd
 from pandas_datareader import data 
 
 #ticker=input('Enter a stock symbol:\n>>')
+# Pull stock info online.
 ticker='MACK'
 stockInfo = data.DataReader(ticker,'quandl','2017-01-01','2017-04-30')
 stockFrame = pd.DataFrame(stockInfo)
